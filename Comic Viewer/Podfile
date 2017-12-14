@@ -1,0 +1,24 @@
+platform :ios, '11.0'
+use_frameworks!
+
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+workspace 'Comic Viewer'
+project 'Comic Viewer'
+
+def comicPods
+    pod 'Alamofire'
+    pod 'AlamofireImage'
+    pod 'PromiseKit'
+    pod 'SwiftyJSON'
+    pod 'SwiftHash'
+end
+
+target 'Comic Viewer' do
+    project 'Comic Viewer'
+    comicPods
+    target 'Comic ViewerTests' do
+        inherit! :search_paths
+    end
+end

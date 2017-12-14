@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Qa-bu-TBO">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Comic Collection View Controller-->
+        <scene sceneID="nsr-0H-qPi">
+            <objects>
+                <collectionViewController id="6Qa-bu-TBO" customClass="ComicCollectionViewController" customModule="Comic_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="12c-NX-6B0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JDZ-1R-WQg">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Dummy" id="m6X-l1-gAm">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="6Qa-bu-TBO" id="Qh1-TX-lYU"/>
+                            <outlet property="delegate" destination="6Qa-bu-TBO" id="5hW-lk-zRg"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <segue destination="2IQ-89-XeG" kind="presentation" identifier="SegueShowComicDetailController" id="YlO-zb-U7Q"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zQd-Wm-Len" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1474" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aM6-IB-6Ua">
+            <objects>
+                <navigationController id="2IQ-89-XeG" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ccg-W3-8Q5">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ybX-OQ-Hab"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ddd-Kr-Lq5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-623" y="134"/>
+        </scene>
+        <!--Comic Detail View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ComicDetailViewController" customModule="Comic_Viewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fwJ-ea-7Gp">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="UoK-kk-Ubb" appends="YES" id="Qsi-ly-C97"/>
+                                    <outletCollection property="gestureRecognizers" destination="buQ-jP-Ttg" appends="YES" id="q9c-TJ-JhU"/>
+                                </connections>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpt-Nw-Vht">
+                                <rect key="frame" x="0.0" y="536" width="375" height="276"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ce9-wE-qdA">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="276"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxb-bJ-w2k">
+                                <rect key="frame" x="0.0" y="536" width="375" height="276"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="xpt-Nw-Vht" secondAttribute="bottom" id="3DK-u0-AUz"/>
+                            <constraint firstItem="fxb-bJ-w2k" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.4" id="8g7-Ww-vqU"/>
+                            <constraint firstAttribute="bottom" secondItem="fxb-bJ-w2k" secondAttribute="bottom" id="9mD-v3-Fjj"/>
+                            <constraint firstAttribute="bottom" secondItem="fwJ-ea-7Gp" secondAttribute="bottom" id="Br0-be-Z4c"/>
+                            <constraint firstItem="fxb-bJ-w2k" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Dui-cG-U8m"/>
+                            <constraint firstItem="fwJ-ea-7Gp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="JC4-vP-hAq"/>
+                            <constraint firstItem="xpt-Nw-Vht" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OU4-LG-Q7A"/>
+                            <constraint firstItem="fwJ-ea-7Gp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SJs-na-LkD"/>
+                            <constraint firstItem="fxb-bJ-w2k" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="TR6-pb-XjN"/>
+                            <constraint firstItem="fwJ-ea-7Gp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kFd-mI-YFw"/>
+                            <constraint firstItem="xpt-Nw-Vht" firstAttribute="height" secondItem="fxb-bJ-w2k" secondAttribute="height" id="vkH-QR-vG8"/>
+                            <constraint firstItem="xpt-Nw-Vht" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xMR-LN-gW6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="y1H-VA-kvE">
+                        <barButtonItem key="leftBarButtonItem" title="Home" id="Qip-xP-8bh">
+                            <connections>
+                                <action selector="homePressedWithSender:" destination="BYZ-38-t0r" id="Ii8-EF-RsG"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="x7L-64-SO1"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="comicImageView" destination="fwJ-ea-7Gp" id="ILi-R2-fNP"/>
+                        <outlet property="scrollView" destination="fxb-bJ-w2k" id="aJ6-xd-taK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="UoK-kk-Ubb">
+                    <connections>
+                        <action selector="loadNextComicWithSender:" destination="BYZ-38-t0r" id="qRE-5Q-dpd"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="buQ-jP-Ttg">
+                    <connections>
+                        <action selector="loadPreviousComicWithSender:" destination="BYZ-38-t0r" id="WvH-ix-pq6"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="237.59999999999999" y="133.00492610837438"/>
+        </scene>
+    </scenes>
+</document>
