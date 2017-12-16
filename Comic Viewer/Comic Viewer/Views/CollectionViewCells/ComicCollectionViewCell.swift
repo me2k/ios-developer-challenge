@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import ComicKit
 
 class ComicCollectionViewCell: UICollectionViewCell, RegisterableCollectionViewCell {
 

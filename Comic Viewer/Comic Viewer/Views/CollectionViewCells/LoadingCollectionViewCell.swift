@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ComicKit
 
 class LoadingCollectionViewCell: UICollectionViewCell, RegisterableCollectionViewCell {
     

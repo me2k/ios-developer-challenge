@@ -6,6 +6,7 @@ inhibit_all_warnings!
 
 workspace 'Comic Viewer'
 project 'Comic Viewer'
+project 'ComicKit/ComicKit'
 
 def comicPods
     pod 'Alamofire'
@@ -15,10 +16,22 @@ def comicPods
     pod 'SwiftHash'
 end
 
-target 'Comic Viewer' do
-    project 'Comic Viewer'
+abstract_target 'comics' do
+
     comicPods
-    target 'Comic ViewerTests' do
-        inherit! :search_paths
+
+    target 'Comic Viewer' do
+        project 'Comic Viewer'
+        target 'Comic ViewerTests' do
+            inherit! :search_paths
+        end
+        
+    end
+
+    target 'ComicKit' do
+        project 'ComicKit/ComicKit'
+        target 'ComicKitTests' do
+            inherit! :search_paths
+        end
     end
 end

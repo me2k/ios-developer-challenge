@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ComicKit
 
 enum SegueIdentifiers: String, SegueIdentityProvider {
     case showComicDetailViewController = "SegueShowComicDetailController"

@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import ComicKit
 
-class ComicCollectionViewController: UICollectionViewController, IHasComicDataSource {
+class ComicCollectionViewController: UICollectionViewController {
 
     // MARK: Properties
     
-    var dataSource: ComicDataSource!
+    var dataSource: ComicCollectionViewDataSource!
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -24,8 +25,7 @@ class ComicCollectionViewController: UICollectionViewController, IHasComicDataSo
         self.clearsSelectionOnViewWillAppear = false
         self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "galaxy-iphone-wallpaper-36"))
         self.collectionView?.backgroundColor = .clear
-        dataSource = ComicDataSource()
-        dataSource.registerCells(withCollectionView: self.collectionView!)
+        dataSource = ComicCollectionViewDataSource(withCollectionView: self.collectionView!)
         dataSource.delegate = self
         dataSource.reload()
     }

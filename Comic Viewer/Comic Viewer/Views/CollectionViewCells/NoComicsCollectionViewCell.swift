@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ComicKit
 
 protocol NoComicsCollectionViewCellDelegate {
     func noComicsCollectionViewCellRetryPressed(_ cell: NoComicsCollectionViewCell)
