@@ -96,11 +96,3 @@ public func ~~> (json: JSON, key: String) -> CGFloat? {
     }
     return nil
 }
-
-public func ~~> (json: JSON, key: String) -> Date? {
-    
-    //extract the string and convert for YYYY-MM-DD-HH-mm-SS
-    return json[key].date
-}
-
-
